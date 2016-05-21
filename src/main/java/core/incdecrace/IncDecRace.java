@@ -1,7 +1,7 @@
 package core.incdecrace;
 
 /**
- * Created by eduard on 1/21/16.
+ * Show that decrement performs better thad increment
  */
 public class IncDecRace {
 

@@ -1,4 +1,4 @@
-package java5.lock;
+package java5;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
