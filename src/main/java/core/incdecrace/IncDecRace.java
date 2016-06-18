@@ -1,17 +1,24 @@
 package core.incdecrace;
 
+import org.slf4j.LoggerFactory;
+
 /**
  * Show that decrement performs better thad increment
  */
 public class IncDecRace {
 
+    static final org.slf4j.Logger logger = LoggerFactory.getLogger(IncDecRace.class);
+
     public static void main(String[] args) {
+
+        logger.trace("TRACE MESSAGE");
+        logger.error("ERROR MESSAGE");
 
         Runnable increment = () -> {
             int a=0;
             long start = System.nanoTime();
             while (true) {
-                if (a == 100) break;
+                if (a == Integer.MAX_VALUE) break;
                 a++;
             }
             System.err.println("inc: "+(System.nanoTime()-start));
@@ -21,10 +28,9 @@ public class IncDecRace {
             int a=0;
             long start = System.nanoTime();
             while (true) {
-                if (a == -100) break;
+                if (a == -100);
                 a--;
             }
-            System.err.println("dec: "+(System.nanoTime()-start));
         };
 
         Thread t1 = new Thread(increment);

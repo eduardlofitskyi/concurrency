@@ -24,9 +24,9 @@ public class Main {
         BlockingQueue<Appointment<Pet>> queue = new LinkedBlockingDeque<>(3);
         Veterinarian veterinarian = new Veterinarian(queue, 5_000);
         Thread.sleep(10_000);
-        veterinarian.setPatientAppointment(new Appointment<Pet>(new Dog("Rex")));
+        veterinarian.setPatientAppointment(new Appointment<>(new Dog("Rex")));
         Thread.sleep(500);
-        veterinarian.setPatientAppointment(new Appointment<Pet>(new Cat("Tiffany")));
+        veterinarian.setPatientAppointment(new Appointment<>(new Cat("Tiffany")));
         veterinarian.start();
     }
 }
